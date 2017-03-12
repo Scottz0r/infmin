@@ -42,7 +42,7 @@ def minimize_file_random(input_file_path, output_file_path, lines):
     if lines > total_lines:
         raise ValueError("File contains {} lines, wanted random sample of {} lines".format(total_lines, lines))
 
-    random_line_nums = random.sample(range(total_lines), lines)
+    random_line_nums = set(random.sample(range(total_lines), lines))
 
     line_num = 0
     counter = 0
