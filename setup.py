@@ -14,7 +14,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.1.1',
+    version='0.1.2',
 
     description='Text file minimizing CLI tool',
     long_description=long_description,
@@ -29,7 +29,7 @@ setup(
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
 
         # Indicate who your project is intended for
         'Intended Audience :: Developers',
@@ -58,19 +58,3 @@ setup(
         ],
     },
 )
-
-"""from setuptools import setup
-
-setup(
-    name="infmin",
-    version="0.1.1",
-    py_modules=["infmin_main"],
-    entry_points={
-        "console_scripts": [
-            "infmin = infmin_main:main"
-        ]
-    },
-
-    author="Scott Clewell",
-    description="Utility that reduces the size of large text files by line."
-)"""

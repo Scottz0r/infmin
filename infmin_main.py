@@ -76,13 +76,13 @@ def print_progress(count, max_lines):
 
 
 def parse_args():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description="Input File Minimizer - a text file minimizing CLI tool.")
     parser.add_argument("in_file", help="The file to minimize.")
     parser.add_argument("lines", type=int, help="The number of lines to output.")
-    parser.add_argument("-f", "--file", help="Output file name.")
-    parser.add_argument("-C", "--directory", help="Full path to output the file.")
-    parser.add_argument("-r", "--rnd", help="Randomly skip lines while minimizing.", action="store_true")
-    parser.add_argument("-s", "--silent", help="Suppress output messages while minimizing.", action="store_true")
+    parser.add_argument("-f", dest="file", help="Output file name.")
+    parser.add_argument("-C", dest="directory", help="Full path to output the file.")
+    parser.add_argument("-r", dest="rnd", help="Randomly skip lines while minimizing.", action="store_true")
+    parser.add_argument("--silent", help="Suppress output messages while minimizing.", action="store_true")
     return parser.parse_args()
 
 
