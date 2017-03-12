@@ -20,7 +20,7 @@ setup(
     long_description=long_description,
     url="https://github.com/Scottz0r/infmin",
     author="Scott Clewell",
-    # author_email='pypa-dev@googlegroups.com',
+    author_email='scott.clewell@gmail.com',
     license='MIT',
 
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
