@@ -23,7 +23,7 @@ def minimize_file(input_file_path, output_file_path, lines):
                 if counter >= lines:
                     break
 
-    # Force a print of 100% (in the edge case that lines > total line in file.
+    # Force a print of 100% (in the edge case that lines > total line in file).
     print_progress(1, 1)
     sys.stdout.write("\n")
 
@@ -59,7 +59,7 @@ def minimize_file_random(input_file_path, output_file_path, lines):
 
                 line_num += 1
 
-    # Force a print of 100% (in the edge case that lines > total line in file.
+    # Force a print of 100% (in the edge case that lines > total line in file).
     print_progress(1, 1)
     sys.stdout.write("\n")
 
@@ -101,13 +101,17 @@ def process_args(args):
             raise ValueError("Must specify a output file name if writing to same directory.")
         output_dir = args.directory
 
-    # Input file logic
-    file_name = args.in_file
+    # Input file logic (default to same name as file).
+    out_file_name = args.in_file
     if args.file is not None:
-        file_name = args.file
+        out_file_name = args.file
+
+    # Ensure the same file being minimized isn't the same being written
+    if os.path.normpath(os.path.join(output_dir, out_file_name)) == os.path.abspath(args.in_file):
+        raise ValueError("Cannot output to same directory and name as input file.")
 
     input_file_path = args.in_file
-    output_file_path = os.path.join(output_dir, file_name)
+    output_file_path = os.path.join(output_dir, out_file_name)
     lines = args.lines
     random_sample = args.rnd or False
 
